@@ -37,6 +37,11 @@ These statements concern exact mathematical values. Verification of GeoGebra’s
 
 This construction comes from the GeoGebra file "Factorial Oracle" (2024) by Robin Miller (saphir, GitHub `hypatiaa`). Its gearbox $k_1=N-1$, $k_2=N+1$ on the factorial shell $N=n!$ is the two-tooth comb proved here. Its lineage is: hand-drawn residue-ray diagrams (2018–19) → GeoGebra residue rays under the handle hypatiaa (2019) → the Factorial Oracle (2024) → the formal helix family of the FVLT kernel (v2.6.1, §9.1a, Lemma 9.3a) → the centred Fourier comb viewer (October 2026) → these Lean proofs (25 November 2026).
 
+Public GeoGebra records (dates as GeoGebra's server reports them, UTC):
+
+- [factorialpacman](https://www.geogebra.org/m/nseeyegv), created 24 July 2024. It already contains the gearbox $k_1=n_2!\,t_1-t_2$, $k_2=n_2!\,t_1+t_2$ with $z_j=n_1!\,e^{2\pi i k_j/n_3}$, the early form of the Factorial Oracle. GeoGebra also records a modification on 25 November 2026; the creation date says when the material was made, not that every detail is unchanged since then.
+- [Wilson's Theorem](https://www.geogebra.org/m/zanuhgw7), created 11 August 2026, published 25 November 2026.
+
 ## Reproduction
 
 The [Wilson trace and polygon gate](WILSON.md) document the companion construction from `WilsonFactorial Oracle.ggb`, its integer Steps protocol, and the two Wilson readouts of the older merged viewer.
