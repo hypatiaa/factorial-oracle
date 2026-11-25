@@ -1,6 +1,6 @@
 name = "fourier-helix-comb"
 version = "0.1.0"
-defaultTargets = ["FourierHelix", "WilsonOracle"]
+defaultTargets = ["FourierHelix", "WilsonOracle", "FactorSearch"]
 
 [[require]]
 name = "mathlib"
@@ -12,3 +12,6 @@ name = "FourierHelix"
 
 [[lean_lib]]
 name = "WilsonOracle"
+
+[[lean_lib]]
+name = "FactorSearch"

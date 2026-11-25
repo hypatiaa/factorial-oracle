@@ -1,0 +1,18 @@
+2026-11-25   Reverse Fourier factor search
+Lean 4.35.0, Windows x86_64
+mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+FactorSearch.lean SHA-256 1a31f61512d4f0ecd9570ebb7f5cc5cda2f6e5f4e24f43bb2649d731e3746be0
+FactorSearch.olean SHA-256 46dbf81759c30714e0114a15fa78efb42f4a2c4c5f32b16444bac8ad33990a08
+lean -j2 -M3500 -o .lake/build/lib/lean/FactorSearch.olean FactorSearch.lean
+LEAN_PATH used the pinned local mathlib build and its dependency libraries.
+Exit code 0. Theorems checked: 14.
+
+'FactorSearch.exact_tooth_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.order_drop_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.first_shorter_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.first_drop_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.composite_result' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.returns_none_iff_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.example_221' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.example_60' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.example_97' depends on axioms: [propext, Classical.choice, Quot.sound]

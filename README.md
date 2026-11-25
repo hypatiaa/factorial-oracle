@@ -46,6 +46,8 @@ Public GeoGebra records (dates as GeoGebra's server reports them, UTC):
 
 The [Wilson trace and polygon gate](WILSON.md) document the companion construction from `WilsonFactorial Oracle.ggb`, its integer Steps protocol, and the two Wilson readouts of the older merged viewer.
 
+The [reverse factor search](FactorSearch.lean) takes a direct integer shell $N\ge2$. At spin $s=2$, it probes the positive tooth with Steps $t=k!\bmod N$. Its exact phase order is $N/\gcd(N,k!)$. The first order drop occurs at the least prime factor of $N$. The executable `FactorSearch.factor?` first probes $k=\lfloor\sqrt N\rfloor$. Full order certifies primality, an intermediate order yields a proper divisor, and order one triggers a scan for the first drop. For $N=221$, Steps $195$ at $k=14$ gives order $17$ and factor $13$. Build this module with `lake build FactorSearch`.
+
 On 25 November 2026 the local Lean 4.35.0 compiler checked all 25 theorems and exited successfully. All 13 printed axiom reports list only `propext`, `Classical.choice`, and `Quot.sound`. The [verification log](VERIFICATION.log) records the source hash, toolchain, mathlib commit, exit status, and axiom output.
 
 Use Lean 4.35.0 with the mathlib commit in [lakefile.toml](lakefile.toml). In a fresh checkout run `lake update`, `lake exe cache get`, and `lake build`. The module prints the axioms of its main results.
