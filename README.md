@@ -1,4 +1,4 @@
-# Robin Miller’s Factorial Oracle and the centered Fourier comb
+# The Factorial Oracle of Robin Miller (saphir) and the centered Fourier comb
 
 The original two points in the GeoGebra file are exactly the first and second teeth of the two-tooth comb when the comb uses the file’s shell and common amplitude. Their sum is the endpoint of its ordered walk. The proof allows any real spin parameter $s$. The saved GeoGebra slider advances $s$ in steps of one.
 
@@ -32,6 +32,10 @@ Write $u=e^{\pi i t_1s}$ and $x=t_2s/N$. The following declarations are in [Four
 | `chart_on_sphere` | The viewer’s scale-A chart maps each complex point, including every walk vertex, to the unit sphere. This is a property of the later 3D display. |
 
 These statements concern exact mathematical values. Verification of GeoGebra’s evaluator, the browser’s floating-point output, and the optional unequal-amplitude tilt lie outside the proof.
+
+## Provenance
+
+This construction comes from the GeoGebra file "Factorial Oracle" (2024) by Robin Miller (saphir, GitHub `hypatiaa`). Its gearbox $k_1=N-1$, $k_2=N+1$ on the factorial shell $N=n!$ is the two-tooth comb proved here. Its lineage is: hand-drawn residue-ray diagrams (2018–19) → GeoGebra residue rays under the handle hypatiaa (2019) → the Factorial Oracle (2024) → the formal helix family of the FVLT kernel (v2.6.1, §9.1a, Lemma 9.3a) → the centred Fourier comb viewer (October 2026) → these Lean proofs (25 November 2026).
 
 ## Reproduction
 
