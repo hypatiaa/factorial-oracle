@@ -1,0 +1,23 @@
+Local source check on 2026-11-25
+Lean 4.35.0 (eb6cafb7290e8bd5f2937522d8d804f58f02bafc), x86_64-w64-windows-gnu
+mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+FourierHelix.lean SHA-256 3c443d76d4cddb49ece01078df523aa7d2242d5207118e77b637333f931bec77
+Factorial Oracle.ggb SHA-256 e293de7d0c6a532f4162e29c413a2f13f1b2285d7ae19d2136f27fef4831ac92
+Command: lean -j2 -M3500 -o <temporary>/FourierHelix.olean FourierHelix.lean
+Imports: local Rule30PrizeKit mathlib build and its dependency libraries on LEAN_PATH
+Compiler exit code: 0
+
+Compiler output
+'FourierHelix.original_labels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.original_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.walk_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.full_comb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.aligned_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.closes_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.alignment_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.chart_on_sphere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.Oracle.sum_is_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.Oracle.factorial_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.Oracle.difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.Oracle.tip_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierHelix.Oracle.saved_labels' depends on axioms: [propext, Classical.choice, Quot.sound]
