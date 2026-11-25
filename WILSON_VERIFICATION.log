@@ -1,0 +1,22 @@
+2026-11-25   WilsonFactorial Oracle source verification
+Lean 4.35.0, Windows x86_64
+mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+WilsonOracle.lean SHA-256 2a0e4f419685bda796b92b76b514d6ab6c099c2bc03c93625aae56d1471753e2
+WilsonOracle.olean SHA-256 ca5d03cdde1437cf9e63d81cd316c77c0e3e822266ee25b6dfd073f33a9ff78d
+lean -j2 -M3500 -o .lake/build/lib/lean/WilsonOracle.olean WilsonOracle.lean
+LEAN_PATH used the pinned local mathlib build and its libraries.
+Exit code 0. Theorems checked: 20.
+
+'WilsonOracle.active_gate_iff_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.polygon_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.vertex_returns_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.distinct_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.plotted_polygon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.antipodal_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.saved_and_active' does not depend on any axioms
+'WilsonOracle.spectral_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.independent_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.gearbox_zero_iff_resident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.prime_iff_integer_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.trace_at_spin_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WilsonOracle.trace_recovers_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]

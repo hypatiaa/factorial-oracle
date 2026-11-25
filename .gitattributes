@@ -1,2 +1,3 @@
 *.ggb binary
 FourierHelix.lean -text
+WilsonOracle.lean -text
