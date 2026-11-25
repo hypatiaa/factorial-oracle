@@ -36,11 +36,18 @@ These statements concern exact mathematical values. Verification of GeoGebra’s
 ## Walking the divisor lattice in both directions
 
 [FactorPath.lean](FactorPath.lean) starts at a positive integer `N`. At each
-shell above 1 it runs the factorial-stride scan until the tooth's orbit first
-shortens. The stride index gives the least prime factor `p`, and the new orbit
-has order `N / p`. The pen records `p` and repeats the scan on that lower shell.
-This uses the first drop at every shell. The separate `factor?` shortcut can
-return a composite factor and skip intermediate divisors.
+shell above 1 it tests the orbit at the factorial stride for `⌊√N⌋`. Full order
+certifies a prime shell, so the pen records `N` and steps straight to 1.
+On a composite shell it scans from stride 0 for the first shorter orbit.
+That drop occurs by `⌊√N⌋`, including the endpoint for a prime square. Its
+stride index is the least prime factor `p`, and its orbit order is `N / p`.
+The pen records `p` and repeats on that lower shell. Looking for the first
+drop keeps each step to one prime factor, even when the endpoint reveals a
+composite divisor.
+
+On a prime shell the endpoint test uses `⌊√N⌋` modular multiplications and
+one gcd. A composite shell also pays for the endpoint pass before its first-drop
+scan, even if its least prime factor is small.
 
 For `720`, the downward labels are `[2, 2, 2, 2, 3, 3, 5]`. Starting at 1
 and multiplying by those labels in reverse gives
@@ -51,7 +58,7 @@ every vertex of this canonical descent for every positive starting shell.
 At 1 the path has one vertex and no edges. The example
 `FactorSearch.Path.round_trip_720` checks both vertex lists.
 The [verification log](FACTOR_PATH_VERIFICATION.log) records the compiler,
-axiom checks, kernel replay, and four executable walks.
+axiom checks, kernel replay, and six executable walks.
 
 ## Provenance
 

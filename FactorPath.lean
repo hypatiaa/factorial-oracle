@@ -8,13 +8,22 @@ the same labels in reverse and visits exactly the same shells. -/
 
 namespace FactorSearch.Path
 
-/-- The scan has enough fuel to see the first drop even when the shell is prime. -/
+/-- A full-order orbit at the square-root endpoint certifies a prime shell.
+Otherwise find the first shortened orbit through that endpoint, inclusive. -/
 def firstLabel (n : ℕ) : ℕ :=
-  (firstDrop n 0 (stride n 0) (n + 1)).getD n
+  if probe n n.sqrt = n then n
+  else (firstDrop n 0 (stride n 0) (n.sqrt + 1)).getD n
 
 theorem firstLabel_eq_minFac {n : ℕ} (hn : 2 ≤ n) : firstLabel n = n.minFac := by
-  have hle := Nat.minFac_le (by omega : 0 < n)
-  simp [firstLabel, firstDrop_finds_minFac hn 0 (n + 1) (by omega) (by omega)]
+  by_cases hfull : probe n n.sqrt = n
+  · have hp := (endpoint_full_iff_prime hn).mp hfull
+    simpa only [firstLabel, ite_eq_left hfull] using hp.minFac_eq.symm
+  · have hp := (endpoint_full_iff_prime hn).not.mp hfull
+    have hcut : n.minFac ≤ n.sqrt :=
+      Nat.le_sqrt'.mpr (Nat.minFac_sq_le_self (by omega : 0 < n) hp)
+    simp only [firstLabel, ite_eq_right hfull,
+      firstDrop_finds_minFac hn 0 (n.sqrt + 1) (Nat.zero_le _) (by omega),
+      Option.getD_some]
 
 /-- The least prime labels the edge. The measured orbit order is its lower endpoint. -/
 theorem first_edge {n : ℕ} (hn : 2 ≤ n) :
@@ -31,7 +40,7 @@ theorem first_orbit_order {n : ℕ} (hn : 2 ≤ n) :
     orderOf (toothPhase n (stride n (firstLabel n))) = n / firstLabel n := by
   exact (exact_tooth_order (by omega : 0 < n) _).trans (first_edge hn).2.1
 
-/-- Execute the scan at each shell and descend by the prime it returned. -/
+/-- Descend by the least prime at each shell, stopping at 1. -/
 def labels (n : ℕ) : List ℕ :=
   if _hn : 2 ≤ n then
     let p := firstLabel n
