@@ -33,6 +33,26 @@ Write $u=e^{\pi i t_1s}$ and $x=t_2s/N$. The following declarations are in [Four
 
 These statements concern exact mathematical values. Verification of GeoGebra’s evaluator, the browser’s floating-point output, and the optional unequal-amplitude tilt lie outside the proof.
 
+## Walking the divisor lattice in both directions
+
+[FactorPath.lean](FactorPath.lean) starts at a positive integer `N`. At each
+shell above 1 it runs the factorial-stride scan until the tooth's orbit first
+shortens. The stride index gives the least prime factor `p`, and the new orbit
+has order `N / p`. The pen records `p` and repeats the scan on that lower shell.
+This uses the first drop at every shell. The separate `factor?` shortcut can
+return a composite factor and skip intermediate divisors.
+
+For `720`, the downward labels are `[2, 2, 2, 2, 3, 3, 5]`. Starting at 1
+and multiplying by those labels in reverse gives
+`1 → 5 → 15 → 45 → 90 → 180 → 360 → 720`.
+
+`FactorSearch.Path.replay_every_shell` proves that the upward walk retraces
+every vertex of this canonical descent for every positive starting shell.
+At 1 the path has one vertex and no edges. The example
+`FactorSearch.Path.round_trip_720` checks both vertex lists.
+The [verification log](FACTOR_PATH_VERIFICATION.log) records the compiler,
+axiom checks, kernel replay, and four executable walks.
+
 ## Provenance
 
 This construction comes from the GeoGebra file "Factorial Oracle" (2024) by Robin Miller (saphir, GitHub `hypatiaa`). Its gearbox $k_1=N-1$, $k_2=N+1$ on the factorial shell $N=n!$ is the two-tooth comb proved here. Its lineage is: hand-drawn residue-ray diagrams (2018–19) → GeoGebra residue rays under the handle hypatiaa (2019) → the Factorial Oracle (2024) → the formal helix family of the FVLT kernel (v2.6.1, §9.1a, Lemma 9.3a) → the centred Fourier comb viewer (October 2026) → these Lean proofs (25 November 2026).

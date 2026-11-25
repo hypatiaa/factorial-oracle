@@ -2,3 +2,4 @@
 FourierHelix.lean -text
 WilsonOracle.lean -text
 FactorSearch.lean -text
+FactorPath.lean -text

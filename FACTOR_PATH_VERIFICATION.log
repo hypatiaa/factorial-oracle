@@ -1,0 +1,28 @@
+2026-11-25   Canonical reverse divisor path
+Lean 4.35.0, Windows x86_64
+Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679
+FactorSearch.lean SHA-256 1a31f61512d4f0ecd9570ebb7f5cc5cda2f6e5f4e24f43bb2649d731e3746be0
+FactorPath.lean SHA-256 5c2a87a30072e590cada3a4281c5a3f7caf3509643c534692b649489ddbcf23a
+FactorPath.olean SHA-256 28df940945349e797767668adcc748d6c1c930b0fad5067f2d003d1ac2495d0e
+lean -j2 -o .lake/build/lib/lean/FactorPath.olean FactorPath.lean
+Compilation exit 0. Pinned local Mathlib cache and compiled FactorSearch import.
+
+'FactorSearch.Path.first_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.first_orbit_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.labels_eq_primeFactorsList' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.distinct_directions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.replay_every_shell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.reaches_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.rebuilds_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FactorSearch.Path.round_trip_720' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+leanchecker --verbose FactorPath (module replay against compiled imports)
+replaying FactorPath
+Exit 0.
+
+Executable walks (#eval), in order: 1, 97, 102, 720.
+([1], [1])
+([97, 1], [1, 97])
+([102, 51, 17, 1], [1, 17, 51, 102])
+([2, 2, 2, 2, 3, 3, 5], [720, 360, 180, 90, 45, 15, 5, 1], [1, 5, 15, 45, 90, 180, 360, 720])
+Exit 0.
